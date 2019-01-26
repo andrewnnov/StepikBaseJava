@@ -1,5 +1,4 @@
-package mod2.task2_1;
-
+package mod2;
 /*
 Реализуйте метод, возвращающий ответ на вопрос: правда ли, что a + b = c?
 Допустимая погрешность – 0.0001 (1E-4)
@@ -18,7 +17,6 @@ true
 public class CompareTwoNumbers {
 
     public static boolean doubleExpression(double a, double b, double c) {
-
-        return Math.abs((a+b)- c) < 0.0001 ? true : false;
+        return Math.abs((a + b) - c) < 0.0001;
     }
 }

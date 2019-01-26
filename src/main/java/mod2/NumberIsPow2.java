@@ -1,4 +1,4 @@
-package mod2.task2_1;
+package mod2;
 
 /*
 Реализуйте метод, проверяющий, является ли заданное число по абсолютной величине степенью двойки.
@@ -16,7 +16,6 @@ import static java.lang.Math.log;
 public class NumberIsPow2 {
 
     public boolean isPowerOfTwo(int value) {
-
         if(value == 0) {
             return false;
         } else {

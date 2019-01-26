@@ -1,4 +1,4 @@
-package mod2.task2_1;
+package mod2;
 
 import org.junit.Test;
 

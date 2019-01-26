@@ -1,4 +1,4 @@
-package mod2.task2_1;
+package mod2;
 /*
 Вам дан список ролей и сценарий пьесы в виде массива строчек.
 
@@ -60,8 +60,6 @@ Sample Output:
  */
 
 public class RolesAndTexts {
-
-
     public static void main(String[] args) {
         String [] roles= {"Городничий","Аммос Федорович","Артемий Филиппович","Лука Лукич"};
         String [] textLines={
@@ -72,11 +70,8 @@ public class RolesAndTexts {
                 "Аммос Федорович: Вот те на!",
                 "Артемий Филиппович: Вот не было заботы, так подай!",
                 "Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
-
         System.out.println(printTextPerRole(roles, textLines));
     }
-
-
 
     public static String printTextPerRole(String[] roles, String[] textLines) {
         StringBuilder answer = new StringBuilder();

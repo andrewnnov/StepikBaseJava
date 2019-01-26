@@ -1,5 +1,4 @@
-package mod2.task2_1;
-
+package mod2;
 /*
 Реализуйте метод, возвращающий true, если среди четырех его аргументов ровно два истинны (любые). Во всех остальных случаях метод должен возвращать false.
 
@@ -30,23 +29,34 @@ Sample Output 3:
 true
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
 public class TrueOrFalse {
 
-    public static boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
+    public static void main(String[] args) {
+        Stream.of("ab", "AB", "cd", "CD").filter(s -> !Character.isLowerCase(s.charAt(0))).forEach(System.out::println);
+    }
 
-        boolean result = false;
+    public static boolean booleanExpression1(boolean a, boolean b, boolean c, boolean d) {
         int summArray = 0;
         boolean[] array = new boolean[4];
         array[0] = a;
         array[1] = b;
         array[2] = c;
         array[3] = d;
-
-        for (int i = 0; i < array.length ; i++) {
-            if(array[i] == true) {
+        for (boolean anArray : array) {
+            if (anArray) {
                 summArray++;
             }
         }
-        return  summArray == 2 ? true : false;
+        return summArray == 2;
+    }
+
+    public static boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
+        return Stream.of(a, b, c, d).filter(r -> r).count() == 2;
     }
 }

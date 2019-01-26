@@ -1,4 +1,4 @@
-package mod2.task2_1;
+package mod2;
 
 /*
 Реализуйте метод, который возвращает букву, стоящую в таблице UNICODE после символа "\" (обратный слэш) на расстоянии a.
@@ -9,9 +9,7 @@ package mod2.task2_1;
 public class CharExpression {
 
     public char charExpression(int a) {
-
         char pivot = '\\';
-
-        return (char) (pivot + a);
+        return (char) (pivot/20.0);
     }
 }

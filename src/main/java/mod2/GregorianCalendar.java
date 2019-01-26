@@ -1,4 +1,4 @@
-package mod2.task2_1;
+package mod2;
 
 /*
 В Григорианском календаре год является високосным в двух случаях: либо он кратен 4, но при этом не кратен 100,
@@ -36,9 +36,6 @@ Sample Output 3:
 public class GregorianCalendar {
 
     public int leapYearCount(int year) {
-
         return (year - (year%4))/4 - ((year -(year%100))/100 - (year - (year%400))/400);
     }
-
-
 }

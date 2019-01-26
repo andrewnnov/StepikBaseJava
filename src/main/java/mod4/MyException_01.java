@@ -39,6 +39,38 @@ P.S. При тестировании этой программы в среде �
 P.P.S. Эта задача в уроке про исключения не случайно :)
  */
 
+import java.util.Arrays;
+
 public class MyException_01 {
+
+    public static String getCallerClassAndMethodName() {
+         Throwable t = new Throwable();
+         StackTraceElement[] ste = t.getStackTrace();
+
+    if (ste.length < 3 ) {
+            return null;
+    } else {
+            return ste[2].getClassName()+"#"+ste[2].getMethodName();
+       }
+    }
+
+    public static void main(String[] args) {
+        System.err.println(getCallerClassAndMethodName());
+        anotherMethod();
+    }
+
+    private static void anotherMethod() {
+        System.err.println(getCallerClassAndMethodName());
+        anotherMethod1();
+    }
+
+    private static void anotherMethod1() {
+        System.err.println(getCallerClassAndMethodName());
+        anotherMethod2();
+    }
+
+    private static void anotherMethod2() {
+        System.err.println(getCallerClassAndMethodName());
+    }
 
 }

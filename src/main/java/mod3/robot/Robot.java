@@ -1,6 +1,6 @@
-package mod3;
+package mod3.robot;
 
-public class Robot {
+public class Robot implements RobotConnection, RobotConnectionManager {
 
     private int x = 0;
     private int y = 0;
@@ -89,5 +89,20 @@ public class Robot {
             System.out.println("направо");
             this.x++;
         }
+    }
+
+    @Override
+    public void moveRobotTo(int x, int y) {
+
+    }
+
+    @Override
+    public void close() {
+
+    }
+
+    @Override
+    public RobotConnection getConnection() {
+        return null;
     }
 }

@@ -14,19 +14,13 @@ public class StartAnalyzerTest {
         System.out.println(test.checkLabels(test.analyzer, "fuck them all"));
         System.out.println(test.checkLabels(test.analyzer, "I am going to the school :|"));
         System.out.println(test.checkLabels(test.analyzer, "kjfksjdkfjkjkjkfjkjsd jkjfjsifiisjjfk j kjfksjkjkfjk jkj  fksdjkfjkdjskfjkjskjfkjks iyrywtrtwtyuh j"));
-
-
-
     }
 
     abstract class KeywordAnalyzer implements TextAnalyzer {
-
-        protected abstract String[] getKeyWords();
-
+        protected abstract String[] getKeywords();
         protected abstract Label getLabel();
-
         public Label processText(String text) {
-            String[] keyWords = getKeyWords();
+            String[] keyWords = getKeywords();
             for (String keyWord: keyWords) {
                 if(text.contains(keyWord)) {
                     return getLabel();
@@ -37,16 +31,14 @@ public class StartAnalyzerTest {
     }
 
     class SpamAnalyzer extends KeywordAnalyzer  {
-
-        private String[] keyWords;
-
+        private String[] keywords;
         public SpamAnalyzer(String[] keyWords) {
-            this.keyWords = keyWords;
+            this.keywords = keyWords;
         }
 
         @Override
-        protected String[] getKeyWords() {
-            return keyWords;
+        protected String[] getKeywords() {
+            return keywords;
         }
 
         @Override
@@ -57,11 +49,11 @@ public class StartAnalyzerTest {
 
     class NegativeTextAnalyzer extends KeywordAnalyzer  {
 
-        private String[] keyWords = {":(", "=(", ":|"};
+        private String[] keywords = {":(", "=(", ":|"};
 
         @Override
-        protected String[] getKeyWords() {
-            return keyWords;
+        protected String[] getKeywords() {
+            return keywords;
         }
 
         @Override
@@ -93,9 +85,4 @@ public class StartAnalyzerTest {
                 return analyzers[i].processText(text);
         return Label.OK;
     }
-
-
-
-
-
 }

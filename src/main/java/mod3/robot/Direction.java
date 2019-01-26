@@ -1,4 +1,4 @@
-package mod3;
+package mod3.robot;
 
 public enum Direction {
     UP,

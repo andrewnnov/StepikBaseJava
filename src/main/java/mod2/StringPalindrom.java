@@ -1,5 +1,4 @@
-package mod2.task2_1;
-
+package mod2;
 /*
 Реализуйте метод, проверяющий, является ли заданная строка палиндромом. Палиндромом называется строка, которая читается
  одинаково слева направо и справа налево (в том числе пустая). При определении "палиндромности" строки должны
@@ -22,17 +21,15 @@ Sample Output:
 true
  */
 
-import static java.util.Collections.replaceAll;
-
 public class StringPalindrom {
 
     public boolean isPalindrome(String text) {
-
-        String newText = text.replaceAll("[^A-Za-z1-9]+", "").toLowerCase();
-
-        StringBuilder stringBuilder = new StringBuilder(newText);
-        stringBuilder.reverse();
-
-        return newText.equals(stringBuilder.reverse().toString());
+        if(text.length() == 0 || text.length() == 1) {
+            return true;
+        } else {
+            StringBuilder stringBuilder = new StringBuilder(text.replaceAll("[^A-Za-z1-9]+", "").toLowerCase());
+            stringBuilder.reverse();
+            return stringBuilder.toString().equals(stringBuilder.reverse().toString());
+        }
     }
 }
